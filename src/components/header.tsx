@@ -32,13 +32,13 @@ const Header = () => {
                     </div>
                 </div>
                 ):(
-                    <a href="/login" title='login'>
+                    <NavLink to="/login" title='login'>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                         <div className="w-10 rounded-full">
                             <UserCircle2 className='m-auto'/>
                         </div>
                     </label>
-                    </a>
+                    </NavLink>
                 )}
                 
             </div>
