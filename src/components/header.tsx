@@ -1,7 +1,7 @@
 import { UserCircle2 } from "lucide-react";
 import { useContext } from "react";
 import { authContext } from "../App";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const session= useContext(authContext);
@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className="navbar bg-sky-900 text-white items-center flex-none">
             <div className="flex-1">
-                <Link to="/" className="btn btn-ghost normal-case text-xl" >Company Logo</Link>
+                <NavLink to="/" className="btn btn-ghost normal-case text-xl" >Company Logo</NavLink>
             </div>
             <div className="flex-none">
                 {session?.user?(
@@ -25,9 +25,9 @@ const Header = () => {
                     <div className="drawer-side z-50">
                         <label htmlFor="profile-drawer" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full bg-base-100 text-base-content shadow-md z-10">
-                            <li><Link to="/profile/">Profile</Link></li>
-                            <li><Link to="/dashboard/">Dashboard</Link></li>
-                            <li><Link to="/" onClick={()=>session.setUser(null)} >Signout</Link></li>
+                            <li><NavLink to="/profile/">Profile</NavLink></li>
+                            <li><NavLink to="/dashboard/">Dashboard</NavLink></li>
+                            <li><NavLink to="/" onClick={()=>session.setUser(null)} >Signout</NavLink></li>
                         </ul>
                     </div>
                 </div>
