@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import DashboardPage from "./dashboard"
 import LoginPage from "./auth/login"
 import MainLayout from "./mainLayout"
@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState(null)
   return (
     <authContext.Provider value={{ user, setUser }}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
 
         </Routes>
-      </BrowserRouter>
+      </HashRouter >
     </authContext.Provider>
   )
 }
