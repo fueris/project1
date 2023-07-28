@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { users } from "../assets/constants";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../App";
 
@@ -54,7 +54,7 @@ const LoginPage = () => {
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                 <p className="mt-2 text-center text-sm text-gray-600 max-w">
                     Or&nbsp;
-                    <a href="/signup" className="font-medium text-sky-900 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign Up</a>
+                    <Link to="/signup" className="font-medium text-sky-900 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Sign Up</Link>
                 </p>
             </div>
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">

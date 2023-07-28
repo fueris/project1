@@ -1,15 +1,15 @@
 import { UserCircle2 } from "lucide-react";
 import { useContext } from "react";
 import { authContext } from "../App";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    //const session = {user:{name:'Balaji'}};
     const session= useContext(authContext);
     
     return (
         <div className="navbar bg-sky-900 text-white items-center flex-none">
             <div className="flex-1">
-                <a className="btn btn-ghost normal-case text-xl" href="/">Company Logo</a>
+                <Link to="/" className="btn btn-ghost normal-case text-xl" >Company Logo</Link>
             </div>
             <div className="flex-none">
                 {session?.user?(
@@ -25,9 +25,9 @@ const Header = () => {
                     <div className="drawer-side z-50">
                         <label htmlFor="profile-drawer" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full bg-base-100 text-base-content shadow-md z-10">
-                            <li><a href="/profile/">Profile</a></li>
-                            <li><a href="/dashboard/">Dashboard</a></li>
-                            <li><a href="/" onClick={()=>session.setUser(null)} >Signout</a></li>
+                            <li><Link to="/profile/">Profile</Link></li>
+                            <li><Link to="/dashboard/">Dashboard</Link></li>
+                            <li><Link to="/" onClick={()=>session.setUser(null)} >Signout</Link></li>
                         </ul>
                     </div>
                 </div>
